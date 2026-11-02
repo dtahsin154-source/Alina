@@ -79,7 +79,7 @@ html,body{height:100%;overflow:hidden;overflow-x:hidden;background:#EBC3CF;font-
 <div id="fx"></div><div id="flash"></div>
 <div id="mus"><small>love-me.mp3 не найден</small><button id="mb" aria-label="Музыка">♪</button></div>
 </div>
-<audio id="au" src="assets/audio/love-me.mp3" preload="auto" loop></audio>
+<audio id="au" src="./love-me.mp3" preload="auto" loop></audio>
 <script>
 const $=s=>document.querySelector(s),R=(a,b)=>a+Math.random()*(b-a);
 const ring=(n,rx,ry,d,o,f)=>Array.from({length:n},(_,i)=>`<ellipse cx="50" cy="${50-d}" rx="${rx}" ry="${ry}" transform="rotate(${o+i*360/n} 50 50)" fill="${f}" stroke="var(--c)" stroke-width=".8"/>`).join('');
