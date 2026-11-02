@@ -166,25 +166,32 @@ mb.onclick = async () => {
 au.addEventListener('play', syncMb);
 au.addEventListener('pause', syncMb);
 
-$('#start').onclick = async () => {
+$('#start').onclick = () => {
 
-    try {
-        au.volume = 0.5;
-        await au.play();
+    // Müziği doğrudan kullanıcı etkileşiminde başlat
+    au.pause();
+    au.currentTime = 0;
+    au.volume = 0.5;
 
-        console.log('❤️ MÜZİK BAŞLADI!');
+    const musicPromise = au.play();
 
-        mus.classList.add('on');
-        syncMb();
-
-    } catch (error) {
-        console.error('MÜZİK BAŞLATILAMADI:', error);
-
-        alert(
-            'Müzik başlatılamadı!\n' +
-            error.name + ': ' + error.message
-        );
+    if (musicPromise) {
+        musicPromise.then(() => {
+            console.log("MUSIC PLAYING ❤️");
+            mus.classList.add('on');
+            syncMb();
+        }).catch(error => {
+            console.error("MUSIC ERROR:", error.name, error.message);
+            alert(error.name + ": " + error.message);
+        });
     }
+
+    $('#s1').classList.remove('on');
+    $('#s2').classList.add('on');
+
+    setTimeout(() => gd.classList.add('go'), 500);
+    setTimeout(() => $('#more').classList.add('on'), 500 + 6 * 900 + 4600);
+};
 
     $('#s1').classList.remove('on');
     $('#s2').classList.add('on');
