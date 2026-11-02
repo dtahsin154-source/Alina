@@ -121,7 +121,6 @@ const leaves=[[44,170,-55],[84,112,-32],[152,80,-10],[248,80,10],[316,112,32],[3
 const stems=H.map(h=>`<path d="M${h[0]} ${h[1]+30}Q${(h[0]+200)/2} 320 200 340" stroke="#66875E" stroke-width="5" fill="none" stroke-linecap="round"/>`).join('');
 const roses=order.map(i=>{const h=H[i];return `<use href="#rose" class="${h[2]}" x="${h[0]-46}" y="${h[1]-46}" width="92" height="92" transform="rotate(${(i-3)*7} ${h[0]} ${h[1]})"/>`}).join('');
 $('#bq').innerHTML=`<svg viewBox="0 0 400 520" role="img" aria-label="Букет из семи роз">${leaves}<path d="M56 236Q84 340 200 508L196 320Z" fill="#F6DCE3" stroke="#EBC3CF"/><path d="M344 236Q316 340 200 508L204 320Z" fill="#FFF0F3" stroke="#EBC3CF"/>${stems}<path d="M84 292Q200 326 316 292L226 506Q200 514 174 506Z" fill="#EBC3CF"/><path d="M84 292Q150 350 200 508L174 506Z" fill="#FFF0F3" opacity=".9"/><path d="M316 292Q250 350 200 508L226 506Z" fill="#D99BAF" opacity=".55"/><path d="M110 300Q200 330 290 300" stroke="#FFF9F5" stroke-width="3" fill="none" opacity=".8"/><path d="M140 414Q200 430 260 414L256 436Q200 452 144 436Z" fill="#B85F79"/><path d="M200 428C160 396 140 440 176 448 192 450 200 440 200 428ZM200 428C240 396 260 440 224 448 208 450 200 440 200 428Z" fill="#B85F79"/><path d="M196 440L172 486 190 478ZM204 440L228 486 210 478Z" fill="#D99BAF"/><circle cx="200" cy="432" r="9" fill="#D99BAF"/>${roses}</svg>`;
-/* flow + music */
 
 /* FLOW + MUSIC */
 const au = $('#au');
